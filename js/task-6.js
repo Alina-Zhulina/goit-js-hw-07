@@ -21,14 +21,12 @@ function onBtnClick(event) {
 function createBoxes(amount) {
   boxes.innerHTML = "";
     let size = 30;
+    let markup = "";
     for (let i = 0; i < amount; i++) {
-    const box = document.createElement("div");
-      box.style.width = `${size}px`;
-      box.style.height = `${size}px`;
-      box.style.backgroundColor = getRandomHexColor();
-      boxes.append(box);
+      markup += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()};"></div>`;
       size += 10;
     } 
+    boxes.innerHTML = markup;
     elemInput.value = "";
   }
 function destroyBoxes() {
